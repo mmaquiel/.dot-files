@@ -2,6 +2,10 @@
 
 echo "Removing old links..."
 rm -fr ~/.vimrc
+rm -fr ~/.zshrc
+rm -fr ~/.tmux.conf
 
 echo "Creating symbolic links to dotfiles"
 ln -s .vimrc ~/.vimrc
+ln -s .zshrc ~/.zshrc
+ln -s .tmux.conf ~/.tmux.conf
