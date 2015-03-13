@@ -6,6 +6,7 @@ rm -fr ~/.zshrc
 rm -fr ~/.tmux.conf
 
 echo "Creating symbolic links to dotfiles"
-ln -s .vimrc ~/.vimrc
-ln -s .zshrc ~/.zshrc
-ln -s .tmux.conf ~/.tmux.conf
+cd ~
+ln -s .dot-files/.vimrc ~/.vimrc
+ln -s .dot-files/.zshrc ~/.zshrc
+ln -s .dot-files/.tmux.conf ~/.tmux.conf

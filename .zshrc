@@ -83,6 +83,6 @@ alias au="sudo apt-get update"
 alias auu="au && sudo apt-get upgrade && sudo apt-get dist-upgrade"
 alias ai="sudo apt-get install"
 alias aui="au && ai"
-alias apt-clean="sudo apt-get autoremove && sudo apt-get autoclean"
-
+alias aclean="sudo apt-get autoremove && sudo apt-get autoclean"
+alias aprm="sudo apt-get remove"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
