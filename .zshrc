@@ -86,3 +86,7 @@ alias aui="au && ai"
 alias aclean="sudo apt-get autoremove && sudo apt-get autoclean"
 alias aprm="sudo apt-get remove"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+
+export NVM_DIR="/home/matias/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
