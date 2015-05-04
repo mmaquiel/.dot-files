@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/matias/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -54,7 +54,7 @@ plugins=(git rvm vagrant tmux)
 
 # User configuration
 
-export PATH="$PATH:/home/matias/.jenv/bin:/home/matias/.rvm/gems/ruby-2.1.2/bin:/home/matias/.rvm/gems/ruby-2.1.2@global/bin:/home/matias/.rvm/rubies/ruby-2.1.2/bin:/home/matias/.jenv/bin:/home/matias/.jenv/bin:/opt/apache-maven-3.2.3//bin:/home/matias/.jenv/bin:/home/matias/.jenv/candidates/maven/current/bin:/home/matias/.jenv/candidates/java/current/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/matias/.rvm/bin:/home/matias/.rvm/bin:/home/matias/.rvm/bin"
+export PATH="$PATH:$HOME/.rvm/gems/ruby-2.1.2/bin:$HOME/.rvm/gems/ruby-2.1.2@global/bin:$HOME/.rvm/rubies/ruby-2.1.2/bin:$HOME/.jenv/bin:$HOME/.jenv/candidates/maven/current/bin:$HOME/.jenv/candidates/java/current/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -79,14 +79,20 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # apt-get aliases
+alias aclean="sudo apt-get autoremove && sudo apt-get autoclean"
 alias au="sudo apt-get update"
-alias auu="au && sudo apt-get upgrade && sudo apt-get dist-upgrade"
+alias auu="au && sudo apt-get upgrade && sudo apt-get dist-upgrade && aclean"
 alias ai="sudo apt-get install"
 alias aui="au && ai"
-alias aclean="sudo apt-get autoremove && sudo apt-get autoclean"
 alias aprm="sudo apt-get remove"
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
+# Add RVM to PATH for scripting
+export RVM_DIR="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-export NVM_DIR="/home/matias/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+#THIS MUST BE AT THE END OF THE FILE FOR JENV TO WORK!!!
+[[ -s "$HOME/.jenv/bin/jenv-init.sh" ]] && source "$HOME/.jenv/bin/jenv-init.sh" && source "$HOME/.jenv/commands/zsh-completion.sh"

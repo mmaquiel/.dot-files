@@ -1,5 +1,21 @@
 #!/bin/bash
 
+if [[ ! -d "$HOME/.jenv" ]]; then
+  echo "Installing jenv..."
+  curl -L -s get.jenv.io | bash
+fi
+
+if [[ ! -d "$HOME/.rvm" ]]; then
+  echo "Installing rvm..."
+  gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+  curl -sSL https://get.rvm.io | bash -s stable
+fi
+
+if [[ ! -d "$HOME/.rvm" ]]; then
+  echo "Installing nvm..."
+  curl https://raw.githubusercontent.com/creationix/nvm/v0.25.1/install.sh | bash
+fi
+
 echo "Removing old links..."
 rm -fr ~/.vimrc
 rm -fr ~/.zshrc
