@@ -41,7 +41,7 @@ ZSH_TMUX_AUTOCONNECT="true"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="dd/mm/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -53,8 +53,7 @@ ZSH_TMUX_AUTOCONNECT="true"
 plugins=(git rvm vagrant tmux)
 
 # User configuration
-
-export PATH="$PATH:$HOME/.rvm/gems/ruby-2.1.2/bin:$HOME/.rvm/gems/ruby-2.1.2@global/bin:$HOME/.rvm/rubies/ruby-2.1.2/bin:$HOME/.jenv/bin:$HOME/.jenv/candidates/maven/current/bin:$HOME/.jenv/candidates/java/current/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.rvm/bin"
+export PATH="$HOME/.rvm/gems/ruby-2.2.1/bin:$HOME/.rvm/gems/ruby-2.2.1@global/bin:$HOME/.rvm/rubies/ruby-2.2.1/bin:$HOME/.jenv/bin:$HOME/.jenv/candidates/maven/current/bin:$HOME/.jenv/candidates/java/current/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -77,7 +76,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
+alias tmux="tmux -2"
 # apt-get aliases
 alias aclean="sudo apt-get autoremove && sudo apt-get autoclean"
 alias au="sudo apt-get update"
@@ -86,13 +85,13 @@ alias ai="sudo apt-get install"
 alias aui="au && ai"
 alias aprm="sudo apt-get remove"
 
-# Add RVM to PATH for scripting
-export RVM_DIR="$PATH:$HOME/.rvm/bin"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # This loads nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 #THIS MUST BE AT THE END OF THE FILE FOR JENV TO WORK!!!
 [[ -s "$HOME/.jenv/bin/jenv-init.sh" ]] && source "$HOME/.jenv/bin/jenv-init.sh" && source "$HOME/.jenv/commands/zsh-completion.sh"
+
+# Add RVM to PATH for scripting
+export RVM_DIR="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

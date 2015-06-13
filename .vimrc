@@ -4,13 +4,11 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'sickill/vim-monokai'
+Plugin 'tomasr/molokai'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'bling/vim-airline'
@@ -30,7 +28,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 set laststatus=2
 syntax enable
-colorscheme monokai
+colorscheme molokai
 set mouse=a
 set tabstop=2
 set shiftwidth=2
