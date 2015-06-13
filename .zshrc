@@ -76,7 +76,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias tmux="tmux -2"
 # apt-get aliases
 alias aclean="sudo apt-get autoremove && sudo apt-get autoclean"
 alias au="sudo apt-get update"
