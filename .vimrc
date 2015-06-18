@@ -12,6 +12,7 @@ Plugin 'tomasr/molokai'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -25,7 +26,17 @@ filetype plugin indent on    " required
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+
+"########################## NERDTree Config ####################################
+" Open NERDTree automatically at file root directory
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_autofind=1
+let g:nerdtree_tabs_startup_cd=1
+let g:nerdtree_tabs_focus_on_files=1
+" Close NERDTree if there's no window open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"########################## End NERDTreeConfig #################################
+
 set laststatus=2
 syntax enable
 colorscheme molokai
