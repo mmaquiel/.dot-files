@@ -13,6 +13,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
+Plugin 'jiangmiao/auto-pairs' " Automatically close braces, brackets, parentheses, etc.
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -27,15 +28,19 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 
-"########################## NERDTree Config ####################################
-" Open NERDTree automatically at file root directory
+"########################## Begin NERDTree Config ################################
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_autofind=1
 let g:nerdtree_tabs_startup_cd=1
 let g:nerdtree_tabs_focus_on_files=1
 " Close NERDTree if there's no window open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-"########################## End NERDTreeConfig #################################
+"########################## End NERDTreeConfig ###################################
+
+"########################## Begin Vim Airline Config #############################
+let g:airline_powerline_fonts = 1
+let g:Powerline_symbols = 'fancy'
+"######################### End Vim Airline Config ################################
 
 set laststatus=2
 syntax enable
