@@ -11,31 +11,27 @@ if [[ ! -d "$HOME/.rvm" ]]; then
  curl -sSL https://get.rvm.io | bash -s stable
 fi
 
-if [[ ! -d "$HOME/.rvm" ]]; then
+if [[ ! -d "$HOME/.nvm" ]]; then
  echo "Installing nvm..."
  curl https://raw.githubusercontent.com/creationix/nvm/v0.25.1/install.sh | bash
 fi
 
 echo "Installing tmux..."
-sudo apt-get install tmux
+sudo apt-get -y install tmux > /dev/null
 echo "Installing zsh..."
-sudo apt-get install zsh
+sudo apt-get -y install zsh > /dev/null
 echo "Installing vim"
-sudo apt-get install vim
-
-if [[ ! -d "$HOME/.jenv" ]]; then
- echo "Installing jenv..."
- curl -L -s get.jenv.io | bash
-fi
+sudo apt-get -y install vim > /dev/null
 
 if [[ ! -d "$HOME/.vim/bundle/Vundle.vim" ]]; then
  echo "Installing Vundle..."
- git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim > /dev/null  2>&1
 fi
 
 echo "Installing Powerline Fonts"
-mkdir /tmp/powerline-fonts
-git clone https://github.com/powerline/fonts.git /tmp/powerline-fonts
+rm -fr /tmp/powerline-fonts > /dev/null
+mkdir -p /tmp/powerline-fonts
+git clone https://github.com/powerline/fonts.git /tmp/powerline-fonts > /dev/null  2>&1
 /tmp/powerline-fonts/install.sh
 
 echo "Removing old links..."
