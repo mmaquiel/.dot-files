@@ -17,21 +17,26 @@ if [[ ! -d "$HOME/.nvm" ]]; then
 fi
 
 echo "Installing tmux..."
-sudo apt-get -y install tmux > /dev/null
+sudo apt-get -y install tmux &>/dev/null
 echo "Installing zsh..."
-sudo apt-get -y install zsh > /dev/null
+sudo apt-get -y install zsh &>/dev/null
 echo "Installing vim"
-sudo apt-get -y install vim > /dev/null
+sudo apt-get -y install vim &>/dev/null
+
+if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
+ echo "Installing Oh-My-Zsh..."
+ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &>/dev/null
+fi
 
 if [[ ! -d "$HOME/.vim/bundle/Vundle.vim" ]]; then
  echo "Installing Vundle..."
- git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim > /dev/null  2>&1
+ git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim &>/dev/null
 fi
 
 echo "Installing Powerline Fonts"
 rm -fr /tmp/powerline-fonts > /dev/null
 mkdir -p /tmp/powerline-fonts
-git clone https://github.com/powerline/fonts.git /tmp/powerline-fonts > /dev/null  2>&1
+git clone https://github.com/powerline/fonts.git /tmp/powerline-fonts &>/dev/null
 /tmp/powerline-fonts/install.sh
 
 echo "Removing old links..."
