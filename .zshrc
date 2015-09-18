@@ -74,3 +74,5 @@ export NVM_DIR="$HOME/.nvm"
 # Add RVM to PATH for scripting
 export RVM_DIR="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+export MAVEN_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,address=4000,server=y,suspend=n -Xms512m -Xmx2048m -XX:MaxPermSize=512m"
