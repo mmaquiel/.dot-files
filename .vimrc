@@ -33,6 +33,7 @@ let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_autofind=1
 let g:nerdtree_tabs_startup_cd=1
 let g:nerdtree_tabs_focus_on_files=1
+let NERDTreeShowHidden=1
 " Close NERDTree if there's no window open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 "########################## End NERDTreeConfig ###################################

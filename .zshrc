@@ -57,13 +57,14 @@ export EDITOR='vim'
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 # apt-get aliases
-alias aclean="sudo apt-get autoremove && sudo apt-get autoclean"
-alias au="sudo apt-get update"
-alias auu="au && sudo apt-get upgrade && sudo apt-get dist-upgrade && aclean"
+alias au="sudo apt-get -y update"
 alias ai="sudo apt-get install"
 alias aui="au && ai"
 alias aprm="sudo apt-get remove"
-
+alias ubuntu-update="au && sudo apt-get -y upgrade && sudo apt-get -y dist-upgrade"
+alias ubuntu-clean="sudo apt-get -y autoremove && sudo apt-get -y autoclean"
+# Git aliases
+alias git-meld="git difftool --tool=meld --dir-dif"
 # This loads nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
@@ -74,5 +75,3 @@ export NVM_DIR="$HOME/.nvm"
 # Add RVM to PATH for scripting
 export RVM_DIR="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-export MAVEN_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,address=4000,server=y,suspend=n -Xms512m -Xmx2048m -XX:MaxPermSize=512m"
