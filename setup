@@ -13,7 +13,7 @@ fi
 
 if [[ ! -d "$HOME/.nvm" ]]; then
  echo "Installing nvm..."
- curl https://raw.githubusercontent.com/creationix/nvm/v0.25.1/install.sh | bash
+ curl https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 fi
 
 echo "Installing tmux..."

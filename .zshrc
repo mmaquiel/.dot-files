@@ -65,6 +65,7 @@ alias ubuntu-update="au && sudo apt-get -y upgrade && sudo apt-get -y dist-upgra
 alias ubuntu-clean="sudo apt-get -y autoremove && sudo apt-get -y autoclean"
 # Git aliases
 alias git-meld="git difftool --tool=meld --dir-dif"
+
 # This loads nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
@@ -72,6 +73,9 @@ export NVM_DIR="$HOME/.nvm"
 #THIS MUST BE AT THE END OF THE FILE FOR JENV TO WORK!!!
 [[ -s "$HOME/.jenv/bin/jenv-init.sh" ]] && source "$HOME/.jenv/bin/jenv-init.sh" && source "$HOME/.jenv/commands/zsh-completion.sh"
 
-# Add RVM to PATH for scripting
+# Add RVM to PATH
 export RVM_DIR="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Add GVM to PATH
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
