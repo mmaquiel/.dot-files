@@ -14,6 +14,9 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jiangmiao/auto-pairs' " Automatically close braces, brackets, parentheses, etc.
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Valloric/YouCompleteMe'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -38,10 +41,14 @@ let NERDTreeShowHidden=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 "########################## End NERDTreeConfig ###################################
 
-"########################## Begin Vim Airline Config #############################
+"########################## Vim Airline Config #############################
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols = 'fancy'
-"######################### End Vim Airline Config ################################
+"######################### Indente-guides config ################################
+let g:indent_guides_enable_on_vim_startup=1 "enable on startup
+set ts=4 sw=4 et
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
 
 set laststatus=2
 syntax enable
