@@ -37,10 +37,10 @@ ZSH_TMUX_AUTOCONNECT="true"
 HIST_STAMPS="dd/mm/yyyy"
 
 # Oh-my-zsh Plugins
-plugins=(git rvm vagrant tmux)
+plugins=(git rvm vagrant mvn tmux git-extras)
 
 # User configuration
-export PATH="$HOME/.rvm/gems/ruby-2.2.1/bin:$HOME/.rvm/gems/ruby-2.2.1@global/bin:$HOME/.rvm/rubies/ruby-2.2.1/bin:$HOME/.jenv/bin:$HOME/.jenv/candidates/maven/current/bin:$HOME/.jenv/candidates/java/current/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.rvm/gems/ruby-2.2.1/bin:$HOME/.rvm/gems/ruby-2.2.1@global/bin:$HOME/.rvm/rubies/ruby-2.2.1/bin:$HOME/.jenv/bin:$HOME/.jenv/candidates/maven/current/bin:$HOME/.jenv/candidates/java/current/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
