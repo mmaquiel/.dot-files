@@ -39,13 +39,25 @@ mkdir -p /tmp/powerline-fonts
 git clone https://github.com/powerline/fonts.git /tmp/powerline-fonts &>/dev/null
 /tmp/powerline-fonts/install.sh
 
+echo "Installing Font-awesome"
+rm -fr /tmp/font-awesome > /dev/null
+mkdir -p /tmp/font-awesome
+wget -P /tmp http://fontawesome.io/assets/font-awesome-4.5.0.zip
+unzip /tmp/font-awesome-4.5.0.zip -d /tmp
+cp /tmp/font-awesome-4.5.0/fonts/fontawesome-webfont.ttf $HOME/.fonts
+
 echo "Removing old links..."
 rm -fr $HOME/.vimrc
 rm -fr $HOME/.zshrc
 rm -fr $HOME/.tmux.conf
+rm -fr $HOME/.i3
+rm -fr $HOME/.i3status.conf
 
 echo "Creating symbolic links to dotfiles"
 cd $HOME
+mkdir $HOME/.i3
 ln -s .dot-files/.vimrc $HOME/.vimrc
 ln -s .dot-files/.zshrc $HOME/.zshrc
 ln -s .dot-files/.tmux.conf $HOME/.tmux.conf
+ln -s .dot-files/i3/config $HOME/.i3/config
+ln -s .dot-files/i3/i3status.conf $HOME/.i3status.conf
