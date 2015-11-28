@@ -123,7 +123,9 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-bindsym $alt+Control+l exec i3lock -i /usr/share/backgrounds/warty-final-ubuntu.png
+#bindsym $alt+Control+l exec i3lock -i /usr/share/backgrounds/warty-final-ubuntu.png
+bindsym $alt+Control+l exec "/usr/local/bin/lock_screen"
+
 #bindsym $alt+Control+l exec dm-tool lock
 # resize window (you can also use the mouse for that)
 
@@ -213,7 +215,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightne
 #Open NetworkManager applet
 exec --no-startup-id nm-applet
 
+#Set auto lock after 15 min
+exec xautolock -time 15 -locker "/usr/local/bin/lock_screen" &
+
 exec deja-dup --backup
 
-exec gnome-settings-daemon
 exec --no-startup-id nitrogen --restore

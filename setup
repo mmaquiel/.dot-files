@@ -16,12 +16,10 @@ if [[ ! -d "$HOME/.nvm" ]]; then
  curl https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 fi
 
-echo "Installing tmux..."
-sudo apt-get -y install tmux &>/dev/null
-echo "Installing zsh..."
-sudo apt-get -y install zsh &>/dev/null
-echo "Installing vim"
-sudo apt-get -y install vim &>/dev/null
+echo "Installing tools..."
+sudo apt-get -y install git tmux zsh vim imagemagick &>/dev/null
+echo "Installing i3 & tools..."
+sudo apt-get -y install i3 xautolock scrot &>/dev/null
 
 if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
  echo "Installing Oh-My-Zsh..."
@@ -52,12 +50,14 @@ rm -fr $HOME/.zshrc
 rm -fr $HOME/.tmux.conf
 rm -fr $HOME/.i3
 rm -fr $HOME/.i3status.conf
+sudo rm -fr /usr/local/bin/lock_screen
 
 echo "Creating symbolic links to dotfiles"
 cd $HOME
 mkdir $HOME/.i3
-ln -s .dot-files/.vimrc $HOME/.vimrc
-ln -s .dot-files/.zshrc $HOME/.zshrc
-ln -s .dot-files/.tmux.conf $HOME/.tmux.conf
-ln -s .dot-files/i3/config $HOME/.i3/config
-ln -s .dot-files/i3/i3status.conf $HOME/.i3status.conf
+ln -s $HOME/.dot-files/.vimrc $HOME/.vimrc
+ln -s $HOME/.dot-files/.zshrc $HOME/.zshrc
+ln -s $HOME/.dot-files/.tmux.conf $HOME/.tmux.conf
+ln -s $HOME/.dot-files/i3/config $HOME/.i3/config
+ln -s $HOME/.dot-files/i3/i3status.conf $HOME/.i3status.conf
+sudo ln -s $HOME/.dot-files/i3/scripts/lock_screen /usr/local/bin/lock_screen
