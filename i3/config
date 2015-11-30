@@ -212,6 +212,10 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
+# Print screen bindings
+bindsym Print exec scrot -e 'mv $f ~/Pictures/' && sleep 1 && notify-send 'Screenshot has ben saved to ~/Pictures'
+bindsym $alt+Print exec notify-send 'Select an area to take a screenshot' && scrot -s -e 'mv $f ~/Pictures/' && notify-send 'Screenshot has ben saved to ~/Pictures'
+
 #Open NetworkManager applet
 exec --no-startup-id nm-applet
 
