@@ -26,6 +26,9 @@ font pango:DejaVu Ubuntu Mono derivative Powerline Regular, FontAwesome 9
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Disable focus follows mouse
+focus_follows_mouse no
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
@@ -213,14 +216,16 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Print screen bindings
-bindsym Print exec scrot -e 'mv $f ~/Pictures/' && sleep 1 && notify-send 'Screenshot has ben saved to ~/Pictures'
-bindsym $alt+Print exec notify-send 'Select an area to take a screenshot' && scrot -s -e 'mv $f ~/Pictures/' && notify-send 'Screenshot has ben saved to ~/Pictures'
+bindsym Print exec scrot -e 'mv $f ~/Pictures/' && sleep 1 && notify-send -t 3000 'Screenshot has ben saved to ~/Pictures'
+bindsym $alt+Print exec notify-send -t 3000 'Select an area to take a screenshot' && scrot -s -e 'mv $f ~/Pictures/' && notify-send 'Screenshot saved to ~/Pictures'
 
 #Open NetworkManager applet
 exec --no-startup-id nm-applet
 
 #Set auto lock after 15 min
 exec xautolock -time 15 -locker "/usr/local/bin/lock_screen" &
+
+exec --no-startup-id dunst
 
 exec deja-dup --backup
 
