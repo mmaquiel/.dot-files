@@ -156,6 +156,7 @@ mode "move" {
   bindsym Left move left 20px
   bindsym Down move down 20px
   bindsym Right move right 20px
+  set $telegram "Telegram"
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
@@ -177,22 +178,26 @@ set $hipchat "HipChat"
 set $slack "Slack"
 set $hangouts_instance "crx_knipolnnllmklapflnccelgolnpehhpl"
 set $intellij "jetbrains-idea-ce"
+set $pycharm "jetbrains-pycharm-ce"
 set $atom "Atom"
 set $chrome "google-chrome"
+set $telegram "Telegram"
 
 for_window [window_role="pop-up"] floating enable
 for_window [class=$spotify] floating enable
 for_window [class="^.*"] border pixel 1
 
 # Default app workspaces
-assign [class=$spotify] $workspace9
 assign [class=$terminal] $workspace1
-assign [class=$hipchat] $workspace10
-assign [class=$slack] $workspace10
-assign [instance=$hangouts_instance] $workspace10
 assign [class=$intellij] $workspace2
+assign [class=$pycharm] $workspace2
 assign [class=$atom] $workspace2
 assign [class=$chrome] $workspace3
+assign [class=$spotify] $workspace9
+assign [class=$hipchat] $workspace10
+assign [class=$slack] $workspace10
+assign [class=$telegram] $workspace10
+assign [instance=$hangouts_instance] $workspace10
 
 mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
     bindsym $mod+r exec systemctl reboot
@@ -216,8 +221,8 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Print screen bindings
-bindsym Print exec scrot -e 'mv $f ~/Pictures/' && sleep 1 && notify-send -t 3000 'Screenshot has ben saved to ~/Pictures'
-bindsym $alt+Print exec notify-send -t 3000 'Select an area to take a screenshot' && scrot -s -e 'mv $f ~/Pictures/' && notify-send 'Screenshot saved to ~/Pictures'
+bindsym Print exec scrot -e 'mv $f ~/Pictures/' && sleep 1 && notify-send -t 2000 'Screenshot saved to ~/Pictures'
+bindsym $alt+Print exec notify-send -t 3000 'Select an area to take a screenshot' && scrot -s -e 'mv $f ~/Pictures/' && notify-send -t 2000 'Screenshot saved to ~/Pictures'
 
 #Open NetworkManager applet
 exec --no-startup-id nm-applet
