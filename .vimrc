@@ -60,3 +60,4 @@ set softtabstop=2
 set expandtab
 set backspace=2 "Solve backspace problem
 set number "Enable line numbers
+set rnu "Enable relative line numbers, combined with 'number', display the current line number instead of , display the current line number instead of 0
