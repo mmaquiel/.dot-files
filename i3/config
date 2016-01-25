@@ -182,6 +182,7 @@ set $pycharm "jetbrains-pycharm-ce"
 set $atom "Atom"
 set $chrome "google-chrome"
 set $telegram "Telegram"
+set $pharo "pharo-vm"
 
 for_window [window_role="pop-up"] floating enable
 for_window [class=$spotify] floating enable
@@ -192,6 +193,7 @@ assign [class=$terminal] $workspace1
 assign [class=$intellij] $workspace2
 assign [class=$pycharm] $workspace2
 assign [class=$atom] $workspace2
+assign [class=$pharo] $workspace2
 assign [class=$chrome] $workspace3
 assign [class=$spotify] $workspace9
 assign [class=$hipchat] $workspace10

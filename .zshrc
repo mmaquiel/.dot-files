@@ -38,7 +38,7 @@ ZSH_TMUX_AUTOCONNECT="true"
 HIST_STAMPS="dd/mm/yyyy"
 
 # Oh-my-zsh Plugins
-plugins=(git rvm vagrant mvn tmux git-extras)
+plugins=(git rvm vagrant mvn tmux git-extras docker)
 
 # User configuration
 export PATH="$PATH:$HOME/.jenv/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.rvm/bin"
