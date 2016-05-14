@@ -40,9 +40,9 @@ git clone https://github.com/powerline/fonts.git /tmp/powerline-fonts &>/dev/nul
 echo "Installing Font-awesome"
 rm -fr /tmp/font-awesome > /dev/null
 mkdir -p /tmp/font-awesome
-wget -P /tmp http://fontawesome.io/assets/font-awesome-4.5.0.zip
-unzip /tmp/font-awesome-4.5.0.zip -d /tmp
-cp /tmp/font-awesome-4.5.0/fonts/fontawesome-webfont.ttf $HOME/.fonts
+wget -P /tmp http://fontawesome.io/assets/font-awesome-4.6.3.zip
+unzip /tmp/font-awesome-4.6.3.zip -d /tmp
+cp /tmp/font-awesome-4.6.3/fonts/fontawesome-webfont.ttf $HOME/.fonts
 
 echo "Removing old links..."
 rm -fr $HOME/.vimrc
